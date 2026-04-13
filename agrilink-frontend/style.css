@@ -1,0 +1,309 @@
+/* --- GLOBAL STYLES & TYPOGRAPHY --- */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7fbf8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+h2 {
+    color: #38761d;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* --- HEADER AND NAVIGATION --- */
+
+header {
+    background-color: #38761d;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #c9e2b3;
+}
+
+/* --- HERO SECTION --- */
+
+.hero {
+    background-color: #e6ffe6;
+    text-align: center;
+    padding: 80px 5%;
+    border-bottom: 3px solid #6aa84f;
+}
+
+/* --- BUTTONS & FORMS --- */
+
+.btn-primary {
+    background-color: #6aa84f;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn-primary:hover {
+    background-color: #38761d;
+    transform: translateY(-1px);
+}
+
+section {
+    padding: 40px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- FORM CONTAINERS (Login, Register) --- */
+
+#login-form, #register-form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    max-width: 400px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 5px;
+    color: #38761d;
+}
+
+input[type="text"], input[type="password"], input[type="number"], select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* --- FARMER DASHBOARD LAYOUT --- */
+
+.farmer-dashboard-content {
+    display: grid;
+    gap: 40px;
+    padding: 20px;
+}
+
+@media (min-width: 768px) {
+    .farmer-dashboard-content {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+/* --- ADD CROP FORM (Horizontal Input Fix) --- */
+
+#add-crop-form {
+    background-color: #e8f5e9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    gap: 10px 20px;
+}
+
+#add-crop-form button[type="submit"] {
+    grid-column: 1 / 3;
+    margin-top: 10px;
+}
+
+/* --- BUYERS MARKETPLACE (CROP CARDS) --- */
+
+.products-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.card h3 {
+    color: #38761d;
+    margin: 15px 0 5px 0;
+}
+
+.card p {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+.card .farmer-info {
+    color: #777;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.card .btn-primary {
+    width: 90%;
+    margin: 0 5% 15px 5%;
+    padding: 10px;
+}
+
+/* --- ORDER/SALES TABLE STYLES --- */
+
+.farmer-orders-list, .buyer-orders-list {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f0f0f0;
+    color: #333;
+    font-weight: bold;
+}
+
+/* --- FOOTER --- */
+
+footer {
+    background-color: #6aa84f;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+/* ===== FINAL FIX: Make add-crop form usable & text visible ===== */
+
+/* Input text visibility */
+#add-crop-form input,
+#add-crop-form select,
+#add-crop-form textarea {
+    color: #000 !important;
+    -webkit-text-fill-color: #000 !important;
+    caret-color: #000 !important;
+    background-color: #fff !important;
+    position: relative;
+    z-index: 5000;
+}
+
+/* Bring the Add Crop form above the table */
+.add-crop-area,
+#add-crop-form {
+    position: relative;
+    z-index: 6000 !important;
+    pointer-events: auto !important;
+}
+
+/* Table stays underneath, but still clickable on its controls */
+.farmer-orders-list,
+.farmer-orders-list table {
+    position: relative;
+    z-index: 1;
+}
+
+/* Keep dropdown select inside the table clickable */
+.farmer-orders-list select {
+    position: relative;
+    z-index: 7000 !important;
+    pointer-events: auto !important;
+}
+
+/* Prevent table from blocking typing inside inputs */
+.orders-list-area {
+    pointer-events: none;
+}
+
+.orders-list-area select,
+.orders-list-area button {
+    pointer-events: auto;
+}
+/* ===== FINAL: make add-crop input text & caret visible ===== */
+#add-crop-form input,
+#add-crop-form textarea,
+#add-crop-form select {
+  color: #000 !important;
+  caret-color: #000 !important;
+  -webkit-text-fill-color: #000 !important; /* Chrome autofill fix */
+  background-clip: padding-box !important;
+  mix-blend-mode: normal !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+}
+
+/* Ensure form sits above the table so clicks/focus reach it */
+.add-crop-area,
+#add-crop-form {
+  position: relative;
+  z-index: 6000 !important;
+  pointer-events: auto !important;
+}
+
+/* Keep orders visible but not blocking typing (controls inside still clickable) */
+.orders-list-area,
+.farmer-orders-list {
+  position: relative;
+  z-index: 1;
+  pointer-events: none; /* make non-blocking */
+}
+.farmer-orders-list button,
+.farmer-orders-list a,
+.farmer-orders-list select,
+.farmer-orders-list input {
+  pointer-events: auto; /* re-enable interactive controls inside table */
+}

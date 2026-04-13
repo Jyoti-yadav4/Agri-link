@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>AgriLink</title>
+ <link rel="stylesheet" href="style.css" />
+
+ <!-- FIX: allow typing in Crop Name, Price, Image URL -->
+ <style>
+   #add-crop-form,
+   .farmer-dashboard-container,
+   .farmer-dashboard-content {
+       position: relative;
+       z-index: 9999; /* brings crop form above the table */
+   }
+
+   .farmer-orders-list,
+   .buyer-orders-list,
+   table {
+       position: relative;
+       z-index: 1; /* keeps the table underneath */
+   }
+ </style>
+</head>
+
+<body>
+ <header>
+  <h1>🌾 AgriLink</h1>
+  <nav>
+   <a href="#" class="nav-link home-link">Home</a>
+   <a href="#farmers" class="nav-link farmers-link">Farmers</a>
+   <a href="#buyers" class="nav-link buyers-link">Buyers</a>
+   <a href="#admin" class="admin-link nav-link">Admin</a>
+   <a href="#login" class="nav-link login-link">Login</a>
+   <a href="#logout" class="nav-link logout-link" style="display: none;">Logout</a>
+  </nav>
+ </header>
+
+ <section class="hero">
+  <h2>Connecting Farmers & Buyers Directly</h2>
+  <p>Buy fresh crops straight from the source without middlemen.</p>
+  <button id="explore-btn" class="btn-primary">Explore Crops</button>
+ </section>
+
+ <section class="login-container">
+  <h2>Login</h2>
+  <form id="login-form">
+   <label for="username">Username:</label>
+   <input type="text" id="username" name="username" required>
+   <label for="password">Password:</label>
+   <input type="password" id="password" name="password" required>
+   <button type="submit" class="btn-primary">Log In</button>
+  </form>
+  <p>Don't have an account? <a href="#" class="signup-link">Sign Up</a></p>
+ </section>
+
+ <section class="register-container">
+  <h2>Register</h2>
+  <form id="register-form">
+   <label for="reg-username">Username:</label>
+   <input type="text" id="reg-username" name="reg-username" required>
+
+   <label for="reg-password">Password:</label>
+   <input type="password" id="reg-password" name="reg-password" required>
+
+   <label for="reg-role">I am a:</label>
+   <select id="reg-role" name="reg-role">
+    <option value="buyer">Buyer</option>
+    <option value="farmer">Farmer</option>
+   </select>
+
+   <button type="submit" class="btn-primary">Register</button>
+  </form>
+  <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+ </section>
+
+ <!-- FARMER DASHBOARD WILL BE INSERTED HERE -->
+ <section class="farmer-dashboard-container" style="display: none;">
+ </section>
+
+ <!-- BUYERS PRODUCT LIST -->
+ <section class="buyers-dashboard-container" style="display: none;">
+  <h2>All Available Crops</h2>
+  <div class="products-list"></div>
+ </section>
+
+ <!-- BUYER ORDER HISTORY -->
+ <section class="buyer-orders-container" style="display: none;">
+  <h2>Your Order History</h2>
+  <div class="buyer-orders-list"></div>
+ </section>
+
+ <footer>
+  <p>© 2025 AgriLink — Connecting Farmers & Buyers</p>
+ </footer>
+
+ <script src="script.js"></script>
+</body>
+</html>
